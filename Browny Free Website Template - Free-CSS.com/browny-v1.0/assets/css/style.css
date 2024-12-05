@@ -540,16 +540,6 @@ h2 {
     overflow: hidden;
 }
 
-/* Kuvan muotoilu */
-.profile-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    transition: transform 0.3s ease; /* Animaatio kuvan zoomaukseen */
-}
-
-/* Otsikon muotoilu */
 .profile-card h3 {
     font-size: 24px;
     color: #333;
@@ -574,6 +564,7 @@ h2 {
 .profile-card:hover {
     transform: translateY(-20px); /* Kortti nousee hieman */
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Lisää varjoa hoverilla */
+    background-color: #fff; /* Muutetaan väriä hoverilla 
 }
 
 .profile-card:hover img {
@@ -595,6 +586,23 @@ h2 {
         width: 100%;
     }
 }
+/* Kuvan säilö */
+.image-container {
+    position: relative;
+    height: 800px; /* Kuvan korkeus */
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+/* Kuvan muotoilu */
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Täyttää koko säilön */
+    position: absolute; /* Kuvan sijoittaminen säilön päälle */
+    top: 0;
+    left: 0;
+    transition: transform 0.3s ease; /* Animaatio kuvan zoomaukseen */
 
 /*-------------------------------------
         9. Portfolio
