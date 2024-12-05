@@ -174,7 +174,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #90cf8e;}
     content: " ";
     top:0;
     left:0;
-    background:rgba(255, 254, 254, 0.185);
+    background:rgba(0, 0, 0, 0.164);
     width:100%;
     height:100%;
 }
@@ -492,155 +492,114 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
 
 .experience-time-responsive{display: none;}
 /*-------------------------------------
-        8. Profiles
+        8. Palvelut
 --------------------------------------*/
-.profiles {
-    padding:  50px 0 100px;
-    border:  1px solid #e5ebf2;
+
+
+/* Yleinen säilö ja taustaväri */
+#profiles {
+    padding: 40px;
+    background-color: #96cf94;
 }
 
-.profiles-content {padding-top: 100px;}
-.profiles-content .col-sm-3{padding:0;}
-.profile-txt {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+.profiles-details {
+    max-width: 1200px;
+    margin: 0 auto;
 }
-.single-profile {
+
+/* Otsikko keskelle */
+.section-heading {
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-size: 36px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Kolme korttia, kaksi ylhäällä ja kolmas alhaalla */
+.profile-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Kaksi saraketta */
+    grid-template-rows: auto auto; /* Kaksi riviä */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Yksittäinen kortti */
+.profile-card {
+    background-color: #3d533d;
+    border-radius: 15px;
+    padding: 250px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out; /* Animaatio */
     position: relative;
-    height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-right: 1px solid #b2c1ce;
-    overflow:hidden;
-    -webkit-transition:background 0.5s linear; 
-    -moz-transition:background 0.5s linear; 
-    -ms-transition:background 0.5s linear; 
-    -o-transition:background 0.5s linear; 
-    transition:background 0.5s linear;
+    overflow: hidden;
 }
-.profile-icon-name {
-    text-transform: capitalize;
-    color: #636a82;
-    font-size: 16px;
+
+/* Kuvan muotoilu */
+.profile-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease; /* Animaatio kuvan zoomaukseen */
 }
-.single-profile.profile-no-border{border-right:transparent;}
-.profile-border {
-    border-bottom: 1px solid #b2c1ce;
+
+/* Otsikon muotoilu */
+.profile-card h3 {
+    font-size: 24px;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
-.single-profile-overlay{
-    display:flex;
-    align-items:center;
-    text-transform: capitalize;
-    justify-content:center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    content: " ";
-    width:100%;
-    height: 100%;
-    background: #90cf8e;
-    background: -moz-linear-gradient(left, #90cf8e 0%, #90cf8e 100%);
-    background: -webkit-linear-gradient(left, #90cf8e 0%,#90cf8e 100%);
-    background: linear-gradient(to right, #90cf8e 0%,#90cf8e 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d92cf9', endColorstr='#b636ff',GradientType=1 );
-    -webkit-transform:scale(0);
-    -moz-transform:scale(0);
-    -ms-transform:scale(0);
-    -o-transform:scale(0);
-    transform:scale(0);
-    -webkit-transition: .5s;
-    -moz-transition: .5s;
-    -ms-transition: .5s;
-    -o-transition: .5s;
-    transition: .5s;
+
+/* Tekstin muotoilu */
+.profile-card p {
+    font-size: 20px;
+    color: #ffffff;
 }
-.single-profile:hover .single-profile-overlay{
-    -webkit-transform:scale(1);
-    -moz-transform:scale(1);
-    -ms-transform:scale(1);
-    -o-transform:scale(1);
-    transform:scale(1);
-    top:0;
+
+/* Erityinen kortti, jolla oma luokka */
+.special-card {
+    grid-column: span 2; /* Tämä kortti vie koko alarivin */
+    background-color: #bdb09d;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
-.single-profile:hover .profile-icon-name,.single-profile:hover .profile-txt a>i{color: #fff;}
-.single-profile:hover .profile-border {border:transparent;}
+
+/* Hover-efekti kortille */
+.profile-card:hover {
+    transform: translateY(-20px); /* Kortti nousee hieman */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Lisää varjoa hoverilla */
+}
+
+.profile-card:hover img {
+    transform: scale(1.50); /* Kuvan zoomaus hoverilla */
+}
+
+/* Erityinen hover-efekti erityiselle kortille */
+.special-card:hover {
+    background-color: #fff; /* Muutetaan väriä hoverilla */
+}
+
+/* Responsiivisuus - alle 768px näytöillä */
+@media (max-width: 768px) {
+    .profile-cards {
+        grid-template-columns: 1fr; /* Yksi sarake mobiililaitteilla */
+    }
+
+    .profile-card {
+        width: 100%;
+    }
+}
+
 /*-------------------------------------
         9. Portfolio
 --------------------------------------*/
-.portfolio {
-    padding:  50px 0 100px;
-    border:  1px solid #e5ebf2;
-}
 
-.portfolio-content {padding-top: 100px;}
-
-/* ---- .item ---- */
-.isotope:after {
-    content: '';
-    display: block;
-    clear: both;
-}
-.isotope .item {
-    position:relative;
-    overflow:hidden;
-    margin-bottom: 30px;
-}
-/*.item img*/
-.isotope .item img{
-    width:100%;
-    height:100%;
-    -webkit-transition: .5s;
-    -moz-transition: .5s;
-    -ms-transition: .5s;
-    -o-transition: .5s;
-    transition: .5s;
-}
-.isotope .item:hover  img{
-    -webkit-transform:scale(1.5);
-    -moz-transform:scale(1.5);
-    -ms-transform:scale(1.5);
-    -o-transform:scale(1.5);
-    transform:scale(1.5);
-}/*.item img*/
-
-/*.isotope-overlay*/
-.isotope-overlay{
-    position:absolute;
-    height:100%;
-    width:100%;
-    background:rgba(31,44,108,.5);
-    display:flex;
-    align-items:center;
-    text-transform: uppercase;
-    justify-content:center;
-    flex-direction:row;
-    -webkit-transform:scale(0);
-    -moz-transform:scale(0);
-    -ms-transform:scale(0);
-    -o-transform:scale(0);
-    transform:scale(0);
-    -webkit-transition: .5s;
-    -moz-transition: .5s;
-    -ms-transition: .5s;
-    -o-transition: .5s;
-    transition: .5s;
-}
-.isotope-overlay a {
-    display: inline-block;
-    color: #fff;
-    font-size: 14px;
-    text-align: center;
-}
-.isotope .item:hover .isotope-overlay{
-    -webkit-transform:scale(1);
-    -moz-transform:scale(1);
-    -ms-transform:scale(1);
-    -o-transform:scale(1);
-    transform:scale(1);
-    top:0;
-}/*.isotope-overlay*/
 
 /*-------------------------------------
         10. Clients
